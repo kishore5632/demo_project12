@@ -2,6 +2,9 @@
 - hosts: webservers 
   become: True
   tasks:
+    - name: Update APT cache
+      apt:
+        update_cache: yes
     - name: Install packages
       apt:
         name: apache2
